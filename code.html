@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aryan Sekhar Meher - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "background": "#000000",
+                "surface": "#000000",
+                "surface-container": "#111111",
+                "surface-container-low": "#0a0a0a",
+                "surface-container-lowest": "#000000",
+                "surface-container-high": "#1a1a1a",
+                "surface-container-highest": "#262626",
+                "primary": "#FF8811",
+                "on-primary": "#000000",
+                "primary-container": "#331b03",
+                "on-primary-container": "#FF8811",
+                "secondary": "#8B94A3",
+                "on-secondary": "#000000",
+                "secondary-container": "#2c2f33",
+                "on-secondary-container": "#FBFFF1",
+                "tertiary": "#FBFFF1",
+                "on-tertiary": "#000000",
+                "tertiary-container": "#e6e6e6",
+                "on-tertiary-container": "#000000",
+                "error": "#ff4444",
+                "on-error": "#1a0000",
+                "error-container": "#3d0f0f",
+                "on-error-container": "#ffa0a0",
+                "on-background": "#FBFFF1",
+                "on-surface": "#FBFFF1",
+                "on-surface-variant": "#8B94A3",
+                "outline": "#8B94A3",
+                "outline-variant": "#4a4f57",
+                "inverse-surface": "#FBFFF1",
+                "inverse-on-surface": "#000000",
+                "inverse-primary": "#cc6c0e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+            "section-gap": "120px",
+            "gutter": "24px",
+            "base": "8px",
+            "margin-mobile": "20px",
+            "container-max": "1440px",
+            "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline": [
+                        "Sora"
+                ],
+                "display": [
+                        "Sora"
+                ],
+                "body": [
+                        "Inter"
+                ],
+                "label": [
+                        "Space Grotesk"
+                ],
+                "label-technical": ["Space Grotesk"],
+                "display-lg": ["Sora"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg": ["Sora"],
+                "headline-md": ["Sora"],
+                "headline-lg-mobile": ["Sora"]
+        },
+        "fontSize": {
+            "label-technical": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "display-lg": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["64px", { "lineHeight": "72px", "fontWeight": "700" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["48px", { "lineHeight": "52px", "fontWeight": "800" }]
+        }
+    },
+  }
+}
+</script>
+<style>
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+        
+        .torn-edge-bottom {
+            mask-image: url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C60.67,31.42,143.76,64.22,209.61,74.78A86.4,86.4,0,0,0,321.39,56.44Z' fill='%23000'/%3E%3C/svg%3E");
+            mask-size: 100% 40px;
+            mask-repeat: no-repeat;
+            mask-position: bottom;
+            padding-bottom: 40px;
+        }
+
+        .glow-orb {
+            background: radial-gradient(circle, rgba(255,136,17,0.15) 0%, rgba(0,0,0,0) 70%);
+        }
+        
+        .glow-orb-cyan {
+            background: radial-gradient(circle, rgba(139,148,163,0.1) 0%, rgba(0,0,0,0) 70%);
+        }
+        
+        .section-separator {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--tw-colors-outline-variant), transparent);
+            margin: var(--tw-spacing-section-gap) 0;
+        }
+
+        .cyber-border {
+            border: 1px solid var(--tw-colors-outline);
+            position: relative;
+        }
+        
+        .cyber-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid var(--tw-colors-primary);
+            border-left: 2px solid var(--tw-colors-primary);
+        }
+
+        .cyber-border::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 2px solid var(--tw-colors-secondary);
+            border-right: 2px solid var(--tw-colors-secondary);
+        }
+        
+        /* Remove black background from the portrait */
+        .portrait-mask {
+            mix-blend-mode: screen;
+            filter: contrast(1.2) drop-shadow(0 0 20px rgba(255,136,17,0.3));
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased relative min-h-screen overflow-x-hidden">
+<div class="fixed inset-0 texture-overlay z-50"></div>
+<!-- TopNavBar Component -->
+<nav class="docked full-width top-0 sticky z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center px-margin-desktop py-base w-full max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-primary tracking-tighter hover:text-secondary transition-colors" href="#">ARYAN SEKHAR MEHER</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label-technical text-label-technical uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#about">About</a>
+<a class="font-label-technical text-label-technical uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#skills">Skills</a>
+<a class="font-label-technical text-label-technical uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#experience">Experience</a>
+<a class="font-label-technical text-label-technical uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="https://github.com/Aryan-Meher" target="_blank">Projects</a>
+<a class="font-label-technical text-label-technical uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#education">Education</a>
+</div>
+<button onclick="window.scrollTo(0, document.body.scrollHeight)" class="bg-primary/10 text-primary font-label-technical text-label-technical uppercase tracking-widest px-4 py-2 border border-primary hover:bg-primary hover:text-background transition-all duration-150 transform hover:scale-95 hidden md:block shadow-[0_0_10px_rgba(255,136,17,0.3)]">Contact</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-20 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="absolute top-1/4 -right-1/4 w-[800px] h-[800px] glow-orb -z-10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] glow-orb-cyan -z-10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-background to-transparent z-10 pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter w-full relative z-20 items-center">
+<div class="lg:col-span-7 flex flex-col items-start gap-base z-30">
+<div class="inline-flex items-center gap-2 border border-primary/30 px-3 py-1 bg-surface-container mb-4 shadow-[0_0_15px_rgba(255,136,17,0.1)]">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse shadow-[0_0_5px_rgba(139,148,163,0.8)]"></span>
+<span class="font-label-technical text-label-technical text-secondary uppercase">Available for new opportunities</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface uppercase tracking-tighter leading-none drop-shadow-2xl">
+                    ARYAN <br/>
+<span class="text-primary">SEKHAR</span> MEHER
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-6">
+                    I build products that are useful and beautiful. Passionate about building innovative solutions at the intersection of Web Development, Robotics, Machine Learning, and Design.
+                </p>
+<div class="mt-8 flex flex-wrap gap-4">
+<a class="bg-primary/10 text-primary font-label-technical text-label-technical uppercase tracking-widest px-8 py-4 border border-primary hover:bg-primary hover:text-background transition-all inline-flex items-center gap-2 group shadow-[0_0_15px_rgba(255,136,17,0.2)]" href="#projects">
+                        Explore Work
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative mt-12 lg:mt-0 z-20 flex justify-center lg:justify-end">
+<div class="relative w-full max-w-[400px] aspect-[3/4] group">
+<div class="absolute inset-0 border border-secondary translate-x-4 translate-y-4 transition-transform duration-500 z-0"></div>
+<div class="absolute inset-0 overflow-hidden z-10 cyber-border bg-transparent">
+<img alt="Aryan Sekhar Meher Portrait" class="w-full h-full object-cover object-top transition-all duration-700 scale-105 group-hover:scale-100 portrait-mask" src="WhatsApp%20Image%202026-06-11%20at%2020.16.13.jpeg"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-6 -left-6 z-30 font-label-technical text-label-technical text-secondary bg-surface-container border border-secondary/30 px-2 py-1 shadow-[0_0_10px_rgba(139,148,163,0.2)]">VSSUT BURLA</div>
+<div class="absolute bottom-10 -left-12 z-30 flex flex-col gap-2">
+<div class="w-8 h-8 border border-primary/50 flex items-center justify-center text-primary bg-surface-container shadow-[0_0_10px_rgba(255,136,17,0.2)]"><span class="material-symbols-outlined text-sm">code</span></div>
+<div class="w-8 h-8 border border-secondary/50 flex items-center justify-center text-secondary bg-surface-container shadow-[0_0_10px_rgba(139,148,163,0.2)]"><span class="material-symbols-outlined text-sm">robot_2</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-separator max-w-container-max mx-auto"></div>
+<!-- About Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-20" id="about">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tighter mb-6">ABOUT <span class="text-primary drop-shadow-[0_0_10px_rgba(255,136,17,0.5)]">ME</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                I am a passionate B.Tech student at Veer Surendra Sai University of Technology (VSSUT), Burla, currently residing in Bargarh, Odisha, India. 
+            </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                With a strong academic foundation reflected in my CGPA of 9.41, I am focused on developing real-world applications that combine software engineering, automation, artificial intelligence, and user-centered design. I continuously learn and explore new technologies while building impactful projects.
+            </p>
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div class="cyber-border p-4 bg-surface-container-low">
+<p class="font-label-technical text-secondary mb-1">LOCATION</p>
+<p class="font-body-md text-on-surface">Bargarh, Odisha, India</p>
+</div>
+<div class="cyber-border p-4 bg-surface-container-low">
+<p class="font-label-technical text-secondary mb-1">CGPA</p>
+<p class="font-body-md text-on-surface">9.41</p>
+</div>
+<div class="cyber-border p-4 bg-surface-container-low col-span-2">
+<p class="font-label-technical text-secondary mb-1">INSTITUTION</p>
+<p class="font-body-md text-on-surface">VSSUT, Burla</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-surface-container cyber-border flex items-center justify-center text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none"></div>
+<img src="fwe.png" alt="Featured Work" class="w-full h-full object-cover relative z-10 group-hover:scale-105 transition-transform duration-500"/>
+</div>
+</div>
+</div>
+</section>
+<div class="section-separator max-w-container-max mx-auto"></div>
+<!-- Skills & Interests Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-20" id="skills">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tighter mb-12 text-center">SKILLS &amp; <span class="text-secondary drop-shadow-[0_0_10px_rgba(139,148,163,0.5)]">INTERESTS</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<!-- Interests & Core Skills -->
+<div class="space-y-12">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-l-4 border-primary pl-4">AREAS OF INTEREST</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 border border-outline-variant p-4 bg-surface-container-lowest hover:border-secondary transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors drop-shadow-[0_0_5px_rgba(255,136,17,0.5)]">language</span>
+<span class="font-body-lg text-on-surface">Web Development</span>
+</li>
+<li class="flex items-center gap-4 border border-outline-variant p-4 bg-surface-container-lowest hover:border-secondary transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors drop-shadow-[0_0_5px_rgba(255,136,17,0.5)]">precision_manufacturing</span>
+<span class="font-body-lg text-on-surface">Robotics</span>
+</li>
+<li class="flex items-center gap-4 border border-outline-variant p-4 bg-surface-container-lowest hover:border-secondary transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors drop-shadow-[0_0_5px_rgba(255,136,17,0.5)]">psychology</span>
+<span class="font-body-lg text-on-surface">Machine Learning & Data Science</span>
+</li>
+<li class="flex items-center gap-4 border border-outline-variant p-4 bg-surface-container-lowest hover:border-secondary transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors drop-shadow-[0_0_5px_rgba(255,136,17,0.5)]">design_services</span>
+<span class="font-body-lg text-on-surface">Graphic Designing</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-l-4 border-secondary pl-4">TECHNICAL SKILLS & LANGUAGES</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-2 border border-primary/30 text-primary bg-primary/5 font-label-technical">Frontend Dev</span>
+<span class="px-3 py-2 border border-primary/30 text-primary bg-primary/5 font-label-technical">Backend Dev</span>
+<span class="px-3 py-2 border border-secondary/30 text-secondary bg-secondary/5 font-label-technical">Full-Stack (MERN)</span>
+<span class="px-3 py-2 border border-primary/30 text-primary bg-primary/5 font-label-technical">Data Science</span>
+<span class="px-3 py-2 border border-secondary/30 text-secondary bg-secondary/5 font-label-technical">Computer Vision</span>
+<span class="px-3 py-2 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">C / C++</span>
+<span class="px-3 py-2 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">Python</span>
+<span class="px-3 py-2 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">JavaScript</span>
+</div>
+</div>
+</div>
+<!-- Tools -->
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-l-4 border-primary pl-4">TOOLS & TECHNOLOGIES</h3>
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-4 mb-6">
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="React Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARSOdHXVcO8g2CLwMemvBH6ef79R6mXBw5ZeCbD9g4ypkutFVynjbSHKpqKLIoK6KGajHXUJ_Cpl6b8gkeD6v-AZP8eQDSl3WyFOpps_Jap7i2bTWc8kLR7OodOEaHCdq3KSqwYsktxScBV-7UgPvNaMU8M3I6765hgr3O0cpTt7J0SEPYhlZER-XPeDNuHZQScoymml0uNqDYU60uGOIrdrXj10I-kE6l-jzNIbKVVVEYX27E4yZSi1lIuVdMSLDLj3Rg7GNp5OI"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">React</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="Node.js Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0NFKnvkL3Ns2BO4UeZnacHesXF6FcQDhgRr0hGy7J1WXSPRmqinzlHiX-BnIQRDOhxacrEmBMtorTlgC9Wvt4PIvVxAKnxD-8xbriPg23wz_5wTw5H_1rrExfW8VQB4OQ0JOJsaEx2WlAZKwbzalveMTdtKIJwu5zAnLpLm4JtrlDP3iBjLm31A05hHpUsIe4pHvi6nlb_NDMiWUHLENe5nx3nKQN_uA3iunR8ZYqnHEyFUYQd8gI7H5aMejXXYUHllPUv4KfHYo"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">Node.js</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="MongoDB Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq_M49C9DgWn6pftINhDNRh9N0uhostGbCxE4Qhff-Jy5Bc4rubGMiEUMcBVKaR4eHqk81-KFk7kMeAhyQI197E48aRSDFDkEBxUjPorOdlv_YX7gKxzqjvoPoRCcGp4AvV8J0GN8ZoPQADr1KvRKvcd5p4f2MhLolFWWTDGZn5NM1UldTeGC1jvgWHckC1aJCiT_WsCU9t0FF-k42PanibgnYfoOEJcS97G4NJyBB7qzyUwh-_UlSCkYdFDR5Dp9OiMYwhiJT2Z4"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">MongoDB</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="Python Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVXSB487o3shbsJcs1wKexm6GlraTSTCFzlOjjn75olNRCGf2ax6Bkhq-PzT7KqpNvrgcLQjpYmYUFbTPcPvy_fci5LmLcUjmeRdDJ9JGDflCaWIUzWbR9I_SAkiTzSBPVVepmtLR92V6nTZiX9786tVQ2P_MnH-BmpX1Yfp-BavuKyC08ukm7p8A2hbfDrDGUvdZ9FMRJwxKKFVfhyv6FKnopyIxCzl63hF_tueCKYzFHEnxZNrbsxL3eN5G-Ne78Jo86XTzvfLw"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">Python</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="Photoshop Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKrB9YB94WjotYlt4jhugtzPKpZbDMOarOPlT8Qe0EhKhb8g1pATp16DUQZ4lhQARmaIWeqd9_IKTFzMIl_qgD645QOfHBh13hY9CsY28yeup0_cTP0aepWRs_gMMZ-RqY0BJuXzen1we53ViYtMD1VIltp4CZF642PvHj9Yy6sPXoMccK0Z6wFclBc6iyQMoFCIUq_2WQcsEo3TAw6mtKclKKgIzYfw3C8Fn9zpGEVuzBiy603bronlJymy_2LYfDOVivOFMmirY"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">Photoshop</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="Illustrator Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYP4GGZg7ubM7SXrBo5BGSsPfBLtWULr7T19S5bpQ6BamnAAlMdAAEOhitplK2NrbYOr-BgUnPcyvz3JpGFW7NuCvaX6MAzAf4hfXHdU2XfsXPXEmznBqhV6n3NCFN0PTqWSBWM5oJzFNRSFGQgsr9mh5gmKtbKOWWqeuk74uY9xmfviCD2fu53ayb4dWo4NqcRIl5cB_CbqRFBX8irluLuTphfqyR4Ajcv1xKX0_VTFtD8yuTxAg9eZu36jAoaVIWDwea9J7EKwE"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">Illustrator</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="OpenCV Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ-CS3X-VANMkHOXi9gYGBJmWL7W9xTkbBBpp_uhSk1QYAqdNLkgLSTo3sHMRODZDvpYexBxrz_ABHCYPQkFG_M8ZbofDTtmXH79DA7Ss5T4iPvPPhHcnAb7UZGW9xynsieUEPTCoA44Z4EltU_xmNdBQ1XjvgLTv9I2R-UM0FOF8DxxuyeazczzTBQwXyDLw4rVJKI1xSFVic2DkozP1wAM8ZLqllSA5JawK0ZXSPyl1ZTV0HS-qCFjJd9tmNAm_oZZJaC6WuxO4"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">OpenCV</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 cyber-border bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="SolidWorks Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBHFGYl2PuzD38ttjLGJR5wNSqZTT3__CvoVu0HtBPccrUy8qHGRefuGHoBDO4OXw2eze19E2PkD-TP-nWSCco-6hfgX98cktxGAxluqdcM85NnOZofqTIT2vBUaPe0mPZipvb1ro-pjS90Z-hHhhHdnOM885s-AW8O-f_PbV9_Ohp2-gOZzL8d0uJ_Frem1Gk_x8yvovx1GRAJ-oSW7cD0AiehgiotjxGVns0bCsFiwCfqLmD3uHC6VrtvpX21h5dG_zqaAQjrEY"/>
+<span class="text-xs font-label-technical text-on-surface-variant uppercase text-center">SolidWorks</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-2 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">Express.js</span>
+<span class="px-3 py-2 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">Tinkercad</span>
+<span class="px-3 py-2 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">Krita</span>
+</div>
+</div>
+</div>
+</section>
+<div class="section-separator max-w-container-max mx-auto"></div>
+<!-- Experience Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-20" id="experience">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tighter mb-12">EXPERIENCE &amp; <span class="text-primary drop-shadow-[0_0_10px_rgba(255,136,17,0.5)]">LEADERSHIP</span></h2>
+<div class="space-y-8 border-l-2 border-outline-variant pl-8 relative">
+<!-- Experience 1 -->
+<div class="relative group">
+<div class="absolute -left-[41px] top-1 w-5 h-5 bg-background border-2 border-secondary rounded-full group-hover:bg-secondary group-hover:shadow-[0_0_10px_rgba(139,148,163,0.8)] transition-all"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase group-hover:text-secondary transition-colors">Intern</h3>
+<p class="font-label-technical text-primary mb-2 tracking-widest">INTERNSELITE</p>
+<p class="font-body-md text-on-surface-variant max-w-3xl">Gained valuable industry experience, enhancing practical skills in a professional environment.</p>
+</div>
+<!-- Experience 2 -->
+<div class="relative group">
+<div class="absolute -left-[41px] top-1 w-5 h-5 bg-background border-2 border-primary rounded-full group-hover:bg-primary group-hover:shadow-[0_0_10px_rgba(255,136,17,0.8)] transition-all"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase group-hover:text-primary transition-colors">Trainee</h3>
+<p class="font-label-technical text-secondary mb-2 tracking-widest">MY EQUATION</p>
+<p class="font-body-md text-on-surface-variant max-w-3xl">Participated in training programs to develop technical expertise.</p>
+</div>
+<!-- Leadership 1 -->
+<div class="relative group">
+<div class="absolute -left-[41px] top-1 w-5 h-5 bg-background border-2 border-secondary rounded-full group-hover:bg-secondary group-hover:shadow-[0_0_10px_rgba(139,148,163,0.8)] transition-all"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase group-hover:text-secondary transition-colors">Graphic Designer & Contributor</h3>
+<p class="font-label-technical text-primary mb-2 tracking-widest">COMPUTER SCIENCE & ENGINEERING SOCIETY, VSSUT BURLA</p>
+<p class="font-body-md text-on-surface-variant max-w-3xl">Designed the official logo of the society. Contributed to various technical and creative initiatives within university clubs and societies.</p>
+</div>
+<!-- Clubs -->
+<div class="relative group mt-12">
+<div class="absolute -left-[41px] top-1 w-5 h-5 bg-background border-2 border-primary rounded-full group-hover:bg-primary group-hover:shadow-[0_0_10px_rgba(255,136,17,0.8)] transition-all"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase group-hover:text-primary transition-colors">Clubs & Organizations</h3>
+<div class="flex gap-2 flex-wrap mt-4">
+    <span class="px-3 py-1 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">Robotics Society</span>
+    <span class="px-3 py-1 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">Enigma</span>
+    <span class="px-3 py-1 border border-outline-variant text-on-surface-variant bg-surface-container font-label-technical">Audio Visual Club</span>
+</div>
+</div>
+</div>
+</section>
+<div class="section-separator max-w-container-max mx-auto"></div>
+<!-- Projects Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-20" id="projects">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tighter mb-12 text-right">SELECTED <span class="text-secondary drop-shadow-[0_0_10px_rgba(139,148,163,0.5)]">PROJECTS</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="group cyber-border bg-surface-container-lowest overflow-hidden flex flex-col">
+<div class="h-64 bg-surface-container border-b border-outline-variant overflow-hidden relative">
+<img alt="Data Science Projects Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpFoPP_cPFLvi-ikERoSxWovXRLucSxqbNW7FbZZfdvARMvnCp3CTQ_AABv9iuL_ZcMKBWsvK1XsJwY85O0BqdXl8ByBn4p7x8ieyjw1zM7nTfLV4FR6QnFP2IaBAEIMutSxrOXk9-EAvgMjn2KaPaf1y3V-Gg0UWwQmKy9gPVQwXAWjzOW34kTGAAZFbESJji3v9U0r2Y1mIjtkOrugiy-eMjkHwYMZ3_nCI8JkppWhazy-A083hsZ80t5Z9g1rQxKKhLdVz8W1g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-on-surface uppercase">Data Science Projects</h3>
+<a class="text-secondary hover:text-primary transition-colors" href="https://github.com/Aryan-Meher" target="_blank"><span class="material-symbols-outlined">open_in_new</span></a>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow">Completed 3 major Data Science projects and multiple mini-projects, showcasing analytical skills, data manipulation, and machine learning model implementation.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs font-label-technical px-2 py-1 border border-primary/30 text-primary bg-primary/5">Python</span>
+<span class="text-xs font-label-technical px-2 py-1 border border-primary/30 text-primary bg-primary/5">Machine Learning</span>
+<span class="text-xs font-label-technical px-2 py-1 border border-primary/30 text-primary bg-primary/5">Data Analysis</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group cyber-border bg-surface-container-lowest overflow-hidden flex flex-col">
+<div class="h-64 bg-surface-container border-b border-outline-variant overflow-hidden relative">
+<img alt="YouTube Clone Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDieoRI4skgv92Mnk_rrRtkO0EkWNLLw1nk5g56sPv2bG7bh1wXdnmerxNRUAQ-3qeFgycZ8gBfemw0W2rapBiIL7vxuH2xZvJqoBJ1X_wTrTqKo6TZw18MUZw96hPe-LVx3Ced8qHvwdqtsFgAZd-8PwkSFKr7PFPIRltLFwtB4TiEucQVPFQ3U-UacNpzFduFY16g6CI3PP_48NBLe3FZGylaT5vLw8zC0E22lpoAy9Ylc2AdAp2pTWSoJYK-s20QcK1IB1yuWOY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-on-surface uppercase">YouTube Clone (In Progress)</h3>
+<a class="text-secondary hover:text-primary transition-colors" href="https://github.com/Aryan-Meher" target="_blank"><span class="material-symbols-outlined">open_in_new</span></a>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow">Developing a YouTube-like platform from scratch as a major Full-Stack Web Development project. Mimicking core functionalities like video playback and user authentication.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs font-label-technical px-2 py-1 border border-secondary/30 text-secondary bg-secondary/5">MERN Stack</span>
+<span class="text-xs font-label-technical px-2 py-1 border border-secondary/30 text-secondary bg-secondary/5">React.js</span>
+<span class="text-xs font-label-technical px-2 py-1 border border-secondary/30 text-secondary bg-secondary/5">Node.js</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group cyber-border bg-surface-container-lowest overflow-hidden flex flex-col md:col-span-2">
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-on-surface uppercase">Computer Vision & Robotics</h3>
+<a class="text-secondary hover:text-primary transition-colors" href="https://github.com/Aryan-Meher" target="_blank"><span class="material-symbols-outlined">open_in_new</span></a>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 flex-grow">Built and experimented with Computer Vision projects using OpenCV. Currently working on various mini-projects in Web Development and Robotics.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs font-label-technical px-2 py-1 border border-primary/30 text-primary bg-primary/5">OpenCV</span>
+<span class="text-xs font-label-technical px-2 py-1 border border-primary/30 text-primary bg-primary/5">Robotics</span>
+<span class="text-xs font-label-technical px-2 py-1 border border-primary/30 text-primary bg-primary/5">Computer Vision</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-separator max-w-container-max mx-auto"></div>
+<!-- Education Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-20" id="education">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tighter mb-12">EDUCATION &amp; <span class="text-primary drop-shadow-[0_0_10px_rgba(255,136,17,0.5)]">CERTIFICATIONS</span></h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<div class="cyber-border p-6 bg-surface-container-lowest hover:border-primary transition-colors duration-300">
+<h3 class="font-headline-md text-xl text-on-surface uppercase mb-2">B.Tech</h3>
+<p class="font-label-technical text-secondary mb-4 tracking-widest">VSSUT, BURLA</p>
+<p class="font-body-md text-on-surface-variant">Currently pursuing Bachelor of Technology in Computer Sci. &amp; Engg.</p>
+<p class="font-body-md text-primary mt-4 font-bold drop-shadow-[0_0_5px_rgba(255,136,17,0.3)]">CGPA: 9.41</p>
+</div>
+<div class="cyber-border p-6 bg-surface-container-lowest hover:border-secondary transition-colors duration-300">
+<h3 class="font-headline-md text-xl text-on-surface uppercase mb-2">Higher Secondary</h3>
+<p class="font-label-technical text-primary mb-4 tracking-widest">KRISHAN'S VIKASH, BARGARH</p>
+<p class="font-body-md text-on-surface-variant">Completed Higher Secondary Education (Science).</p>
+<p class="font-body-md text-secondary mt-4 font-bold drop-shadow-[0_0_5px_rgba(139,148,163,0.3)]">Score: 538/600</p>
+</div>
+<div class="cyber-border p-6 bg-surface-container-lowest hover:border-primary transition-colors duration-300">
+<h3 class="font-headline-md text-xl text-on-surface uppercase mb-2">Matriculation</h3>
+<p class="font-label-technical text-secondary mb-4 tracking-widest">SARASWATI SISHU VIDYA MANDIR, BARGARH</p>
+<p class="font-body-md text-on-surface-variant">Completed Matriculation (Odia Vibhag).</p>
+<p class="font-body-md text-primary mt-4 font-bold drop-shadow-[0_0_5px_rgba(255,136,17,0.3)]">Score: 94.17%</p>
+</div>
+</div>
+<div class="cyber-border p-8 bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-on-surface uppercase mb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary drop-shadow-[0_0_5px_rgba(139,148,163,0.5)]">workspace_premium</span>
+                Certifications & Programs
+            </h3>
+<ul class="font-body-lg text-on-surface-variant list-disc list-inside mt-2 space-y-1">
+    <li>Certified by <strong class="text-primary font-bold">InternsElite</strong></li>
+    <li>Participant of the <strong class="text-primary font-bold">be10X AI Program</strong></li>
+    <li>Trained in <strong class="text-primary font-bold">Prompt Engineering</strong> through the be10X AI Program</li>
+</ul>
+</div>
+<a class="relative z-10 shrink-0 px-6 py-3 border border-secondary text-secondary font-label-technical uppercase hover:bg-secondary hover:text-background transition-colors shadow-[0_0_10px_rgba(139,148,163,0.2)]" href="#">View Details</a>
+</div>
+</section>
+<!-- Footer Component -->
+<footer class="full-width relative border-t border-outline bg-surface-container-lowest dark:bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter w-full max-w-container-max mx-auto gap-base mt-20">
+<div class="font-headline-md text-headline-md text-on-surface uppercase tracking-tighter">
+            ARYAN SEKHAR MEHER
+        </div>
+<div class="font-body-md text-body-md text-on-surface-variant text-center">
+            © 2026 Aryan Sekhar Meher. Engineered for Impact.
+        </div>
+<div class="flex gap-6 flex-wrap justify-center">
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all uppercase tracking-widest" href="https://github.com/Aryan-Meher" target="_blank">GitHub</a>
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all uppercase tracking-widest" href="https://www.linkedin.com/in/aryan-sekhar-meher-618252370" target="_blank">LinkedIn</a>
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all uppercase tracking-widest" href="https://www.instagram.com/_aryan.meher_" target="_blank">Instagram</a>
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all uppercase tracking-widest" href="https://drive.google.com/drive/folders/1duN3ZtoTb1A7-AxD7qO_Vce_KXwNOmJp?usp=sharing" target="_blank">Design Portfolio</a>
+</div>
+</footer>
+</body></html>
