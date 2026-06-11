@@ -163,7 +163,7 @@
 <body class="bg-background text-on-background antialiased relative min-h-screen overflow-x-hidden">
 <div class="fixed inset-0 texture-overlay z-50"></div>
 <!-- TopNavBar Component -->
-<nav class="docked full-width top-0 sticky z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center px-margin-desktop py-base w-full max-w-container-max mx-auto">
+<nav class="docked full-width top-0 sticky z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base w-full max-w-container-max mx-auto">
 <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:text-secondary transition-colors" href="#">ARYAN SEKHAR MEHER</a>
 <div class="hidden md:flex gap-6 items-center">
 <a class="font-label-technical text-label-technical uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#about">About</a>
@@ -173,7 +173,7 @@
 <a class="font-label-technical text-label-technical uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#education">Education</a>
 </div>
 <button onclick="window.scrollTo(0, document.body.scrollHeight)" class="bg-primary/10 text-primary font-label-technical text-label-technical uppercase tracking-widest px-4 py-2 border border-primary hover:bg-primary hover:text-background transition-all duration-150 transform hover:scale-95 hidden md:block shadow-[0_0_10px_rgba(255,136,17,0.3)]">Contact</button>
-<button class="md:hidden text-primary">
+<button id="menu-btn" class="md:hidden text-primary">
 <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>menu</span>
 </button>
 </nav>
@@ -206,7 +206,7 @@
 <div class="relative w-full max-w-[400px] aspect-[3/4] group">
 <div class="absolute inset-0 border border-secondary translate-x-4 translate-y-4 transition-transform duration-500 z-0"></div>
 <div class="absolute inset-0 overflow-hidden z-10 cyber-border bg-transparent">
-<img alt="Aryan Sekhar Meher Portrait" class="w-full h-full object-cover object-top transition-all duration-700 scale-105 group-hover:scale-100 portrait-mask" src="WhatsApp%20Image%202026-06-11%20at%2020.16.13.jpeg"/>
+<img alt="Aryan Sekhar Meher Portrait" class="w-full h-full object-cover object-top transition-all duration-700 scale-105 group-hover:scale-100 portrait-mask" src="profile.jpeg"/>
 </div>
 <!-- Decorative Elements -->
 <div class="absolute -top-6 -left-6 z-30 font-label-technical text-label-technical text-secondary bg-surface-container border border-secondary/30 px-2 py-1 shadow-[0_0_10px_rgba(139,148,163,0.2)]">VSSUT BURLA</div>
@@ -246,7 +246,7 @@
 </div>
 </div>
 <div class="relative">
-<div class="aspect-square bg-surface-container cyber-border flex items-center justify-center text-center relative overflow-hidden group">
+<div class="w-full max-w-[400px] mx-auto aspect-square bg-surface-container cyber-border flex items-center justify-center text-center relative overflow-hidden group">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none"></div>
 <img src="fwe.png" alt="Featured Work" class="w-full h-full object-cover relative z-10 group-hover:scale-105 transition-transform duration-500"/>
 </div>
@@ -479,7 +479,7 @@
 </div>
 </section>
 <!-- Footer Component -->
-<footer class="full-width relative border-t border-outline bg-surface-container-lowest dark:bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter w-full max-w-container-max mx-auto gap-base mt-20">
+<footer class="full-width relative border-t border-outline bg-surface-container-lowest dark:bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-container-max mx-auto gap-base mt-20">
 <div class="font-headline-md text-headline-md text-on-surface uppercase tracking-tighter">
             ARYAN SEKHAR MEHER
         </div>
@@ -493,4 +493,33 @@
 <a class="font-label-technical text-label-technical text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all uppercase tracking-widest" href="https://drive.google.com/drive/folders/1duN3ZtoTb1A7-AxD7qO_Vce_KXwNOmJp?usp=sharing" target="_blank">Design Portfolio</a>
 </div>
 </footer>
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu" class="fixed inset-0 bg-background/95 backdrop-blur-md z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center gap-8">
+  <button id="close-menu" class="absolute top-6 right-6 text-primary">
+    <span class="material-symbols-outlined text-3xl">close</span>
+  </button>
+  <a class="font-headline-md text-2xl uppercase tracking-widest text-on-surface hover:text-secondary transition-colors" href="#about">About</a>
+  <a class="font-headline-md text-2xl uppercase tracking-widest text-on-surface hover:text-secondary transition-colors" href="#skills">Skills</a>
+  <a class="font-headline-md text-2xl uppercase tracking-widest text-on-surface hover:text-secondary transition-colors" href="#experience">Experience</a>
+  <a class="font-headline-md text-2xl uppercase tracking-widest text-on-surface hover:text-secondary transition-colors" href="https://github.com/Aryan-Meher" target="_blank">Projects</a>
+  <a class="font-headline-md text-2xl uppercase tracking-widest text-on-surface hover:text-secondary transition-colors" href="#education">Education</a>
+  <button onclick="toggleMobileMenu(); window.scrollTo(0, document.body.scrollHeight)" class="bg-primary/10 text-primary font-label-technical uppercase tracking-widest px-6 py-3 border border-primary hover:bg-primary hover:text-background transition-all shadow-[0_0_10px_rgba(255,136,17,0.3)] mt-4">Contact</button>
+</div>
+
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuBtn = document.getElementById('menu-btn');
+  const closeBtn = document.getElementById('close-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+
+  function toggleMobileMenu() {
+    mobileMenu.classList.toggle('translate-x-full');
+  }
+
+  menuBtn.addEventListener('click', toggleMobileMenu);
+  closeBtn.addEventListener('click', toggleMobileMenu);
+  menuLinks.forEach(link => {
+    link.addEventListener('click', toggleMobileMenu);
+  });
+</script>
 </body></html>
